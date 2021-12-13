@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./register.scss";
+import { BASE_URL } from "../../config";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ const Register = () => {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post("auth/register", { email, username, password });
+      await axios.post(BASE_URL + "auth/register", { email, username, password });
       history.push("/login");
     } catch (error) {
       console.log(error);

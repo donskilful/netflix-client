@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://nertflix-server.herokuapp.com/api';

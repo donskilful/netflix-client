@@ -4,6 +4,7 @@ import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { BASE_URL } from "../../config";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -12,7 +13,7 @@ const Home = ({ type }) => {
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const res = await axios.get(
+        const res = await axios.get(BASE_URL + 
           `lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,

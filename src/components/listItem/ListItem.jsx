@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import "./listItem.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../config";
 
 const ListItem = ({ index, item }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -16,7 +17,7 @@ const ListItem = ({ index, item }) => {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("/movies/find/" + item, {
+        const res = await axios.get(BASE_URL + "/movies/find/" + item, {
           headers: {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
