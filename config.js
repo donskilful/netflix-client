@@ -1,1 +1,0 @@
-export const BASE_URL = "https://my-netflix-api.herokuapp.com/api";

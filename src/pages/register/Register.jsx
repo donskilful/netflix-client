@@ -23,7 +23,7 @@ const Register = () => {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post(BASE_URL + "auth/register", { email, username, password });
+      await axios.post(BASE_URL + "/auth/register", { email, username, password });
       history.push("/login");
     } catch (error) {
       console.log(error);
